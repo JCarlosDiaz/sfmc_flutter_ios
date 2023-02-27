@@ -115,6 +115,9 @@ public class SwiftSfmcPlugin: NSObject, FlutterPlugin {
                 return
             }
             result(setPushEnabled(isEnabled: isEnabled!))
+        } else if (call.method == "getDeviceToken"){
+            let deviceToken : String? = getDeviceToken()
+            result(deviceToken)
         }
     }
     
@@ -126,6 +129,11 @@ public class SwiftSfmcPlugin: NSObject, FlutterPlugin {
     func getContactKey()-> String?{
         let contactKey: String? = SFMCSdk.mp.contactKey()
         return contactKey
+    }
+
+    func getDeviceToken()-> String?{
+        let deviceToken: String? = SFMCSdk.mp.deviceToken()
+        return deviceToken
     }
     
     func setTag(tag: String) -> Bool {

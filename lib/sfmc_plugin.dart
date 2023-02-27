@@ -36,6 +36,10 @@ class SfmcPlugin {
   Future<String?> getContactKey() =>
       SfmcPluginPlatform.instance.getContactKey();
 
+  /// To get device token
+  Future<String?> getDeviceToken() async =>
+      SfmcPluginPlatform.instance.getDeviceToken();
+
   /// To Add Tags
   Future<bool?> addTag(String? tag) => SfmcPluginPlatform.instance.addTag(tag);
 

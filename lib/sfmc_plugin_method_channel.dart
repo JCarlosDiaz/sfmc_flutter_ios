@@ -53,6 +53,13 @@ class MethodChannelSfmcPlugin extends SfmcPluginPlatform {
   }
 
   @override
+  Future<String?> getDeviceToken() async {
+    final String? result = await methodChannel.invokeMethod('getDeviceToken');
+
+    return result;
+  }
+
+  @override
   Future<bool?> addTag(String? tag) async {
     final bool? result = await methodChannel.invokeMethod('addTag', {
       "tag": tag,

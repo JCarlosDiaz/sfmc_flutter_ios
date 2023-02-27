@@ -49,6 +49,8 @@ abstract class SfmcPluginPlatform extends PlatformInterface {
   /// To Get Contact Key
   Future<String?> getContactKey() => _instance.getContactKey();
 
+  Future<String?> getDeviceToken() => _instance.getDeviceToken();
+
   /// To Add Tags
   Future<bool?> addTag(String? tag) => _instance.addTag(tag);
 
